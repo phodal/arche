@@ -58,6 +58,12 @@ android {
 }
 ```
 
+###  permission denied for window type 2003
+
+```
+
+```
+
 Bundle files
 ---
 
