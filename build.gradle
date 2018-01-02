@@ -19,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "$rootDir/RNArche/node_modules/react-native/android"
+        }
     }
 }
 

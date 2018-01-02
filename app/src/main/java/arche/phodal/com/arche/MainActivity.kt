@@ -1,5 +1,6 @@
 package arche.phodal.com.arche
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
@@ -14,8 +15,8 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
+                val reactActivity = Intent(this, MyReactActivity::class.java)
+                this.startActivity(reactActivity)
             }
             R.id.navigation_notifications -> {
                 message.setText(R.string.title_notifications)
