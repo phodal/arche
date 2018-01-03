@@ -17,11 +17,6 @@ class ArcheWebViewFragment : Fragment() {
     private var mWebView: WebView? = null
     private var avi: AVLoadingIndicatorView? = null
 
-    @SuppressLint("ObsoleteSdkInt")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     @SuppressLint("SetJavaScriptEnabled")
     @Nullable
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -53,5 +48,4 @@ class ArcheWebViewFragment : Fragment() {
             }
         }
     }
-
 }
