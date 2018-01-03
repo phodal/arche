@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import arche.phodal.com.arche.R
 import com.facebook.react.BuildConfig
 import com.facebook.react.common.LifecycleState
 import com.facebook.react.shell.MainReactPackage
