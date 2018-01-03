@@ -19,6 +19,8 @@ class ArcheReactActivity : Activity(), DefaultHardwareBackBtnHandler {
     private val packages: List<ReactPackage>
         get() = Arrays.asList<ReactPackage>(
                 MainReactPackage()
+//                    RNDeviceInfo(),
+//                    RCTToastPackage()
         )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +35,7 @@ class ArcheReactActivity : Activity(), DefaultHardwareBackBtnHandler {
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build()
-        mReactRootView!!.startReactApplication(mReactInstanceManager, "RNArche", null)
+        mReactRootView!!.startReactApplication(mReactInstanceManager, "WebApp", null)
 
         setContentView(mReactRootView)
     }

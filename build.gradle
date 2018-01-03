@@ -19,9 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url "$rootDir/RNArche/node_modules/react-native/android"
-        }
+        maven { url "$rootDir/RNArche/node_modules/react-native/android" }
+        maven { url "$rootDir/RNArche/node_modules/react-native-device-info/android" }
+        maven { url "$rootDir/RNArche/node_modules/dore-toast/android" }
     }
 }
 
