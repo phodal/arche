@@ -1,5 +1,6 @@
 package arche.phodal.com.arche
 
+import ArcheReactFragment
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
@@ -10,9 +11,6 @@ import android.support.design.widget.BottomNavigationView.OnNavigationItemSelect
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import ArcheReactFragment
-import android.webkit.WebView
-import android.webkit.WebViewClient
 
 class MainActivity : AppCompatActivity() {
     private val OVERLAY_PERMISSION_REQ_CODE = 2018
