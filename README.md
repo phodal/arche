@@ -9,106 +9,16 @@
  - Ionic + Angular
  - Dore Framework
 
-详细步骤见：
+详细步骤见：[docs](./docs)
 
-Native
+Screenshots
 ---
 
-使用 Android Studio 创建项目
+![](./docs/screenshots/ss.png)
 
-
-RN
+LICENSE
 ---
 
-```
-npm install -g create-react-native-app
+[![Phodal's Idea](http://brand.phodal.com/shields/idea-small.svg)](http://ideas.phodal.com/)
 
-
-create-react-native-app RNArche
-
-cd RNArche
-npm start
-```
-
-Inject
-
-```
-npm run inject
-```
-
-Q & A
----
-
-```
-libgnustl_shared.so" is 32-bit instead of 64-bit
-```
-
-
-```
-
-android {
-    compileSdkVersion 26
-    defaultConfig {
-        applicationId "arche.phodal.com.arche"
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary= true
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
-```
-
-###  permission denied for window type 2003
-
-```
-
-```
-
-Bundle files
----
-
-
-```
-cp ./RNArche/android/app/build/intermediates/assets/release/index.android.bundle ./app/src/main/assets/index.android.bundle
-```
-
-WebView
----
-
-```
-npm install -g cordova ionic
-
-ionic start archeWebview sidemenu
-
-yarn build
-```
-
-问题：
-
-```
-java.lang.ClassCastException: android.app.Application cannot be cast to arche.phodal.com.arche.ArcheApplication
-```
-
-
-
-```
-    <application
-        android:name=".ArcheApplication"
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-```
+© 2018A [Phodal Huang](https://www.phodal.com)'s [Idea](http://github.com/phodal/ideas).  This code is distributed under the MIT license. See `LICENSE` in this directory.
