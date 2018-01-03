@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     tools:context="arche.phodal.com.arche.MainActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <FrameLayout
         android:adjustViewBounds="true"
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    </android.support.constraint.ConstraintLayout>
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
