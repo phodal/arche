@@ -6,10 +6,11 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import MyReactFragment
 
 class MainActivity : AppCompatActivity() {
     private val OVERLAY_PERMISSION_REQ_CODE = 2018
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+    private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
                 message.setText(R.string.title_home)
@@ -38,9 +39,16 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_dashboard -> {
                 val reactActivity = Intent(this, MyReactActivity::class.java)
                 this.startActivity(reactActivity)
+//                message.setText(R.string.title_dashboard)
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+                val fragment = MyReactFragment()
+                supportFragmentManager.beginTransaction()
+                        .add(R.id.container, fragment)
+                        .commit()
+
+//                message.setText(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
