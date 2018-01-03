@@ -1,0 +1,3 @@
+[submodule "RNArche/ionic"]
+	path = RNArche/ionic
+	url = https://github.com/phodal/arche-webiew.git
