@@ -35,6 +35,14 @@ class ArcheWebViewFragment : Fragment() {
         actionBar?.show()
     }
 
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+        when {
+            hidden -> actionBar?.show()
+            else -> actionBar?.hide()
+        }
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     @Nullable
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {

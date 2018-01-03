@@ -50,8 +50,6 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
                     switchFragment(lastShowFragment, 0)
                     lastShowFragment = 0
                 }
-                message.setText(R.string.title_home)
-
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
@@ -59,7 +57,6 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
                     switchFragment(lastShowFragment, 1)
                     lastShowFragment = 1;
                 }
-                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_webview -> {
@@ -67,7 +64,6 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
                     switchFragment(lastShowFragment, 2)
                     lastShowFragment = 2
                 }
-                message.setText(R.string.title_webview)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -77,7 +73,7 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
     private fun switchFragment(lastIndex: Int, index: Int) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.hide(fragments!![lastIndex])
-        if (!fragments!![index].isAdded()) {
+        if (!fragments!![index].isAdded) {
             transaction.add(R.id.container, fragments!![index])
         }
         transaction.show(fragments!![index]).commitAllowingStateLoss()
@@ -87,7 +83,7 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
         homeFragment = HomeFragment()
         archeReactFragment = ArcheReactFragment()
         archeWebViewFragment = ArcheWebViewFragment()
-        fragments = arrayOf<Fragment>(homeFragment!!, archeReactFragment!!, archeWebViewFragment!!)
+        fragments = arrayOf(homeFragment!!, archeReactFragment!!, archeWebViewFragment!!)
         lastShowFragment = 0
         supportFragmentManager
                 .beginTransaction()
