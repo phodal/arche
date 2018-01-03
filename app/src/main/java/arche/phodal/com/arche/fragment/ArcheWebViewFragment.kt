@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.graphics.Bitmap
-import android.support.v7.app.ActionBar
 import com.wang.avi.AVLoadingIndicatorView
 
 class ArcheWebViewFragment : Fragment() {
