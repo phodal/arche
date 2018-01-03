@@ -4,4 +4,5 @@
     <string name="title_dashboard">Activity</string>
     <string name="title_notifications">Fragment</string>
     <string name="title_webview">Webview</string>
+    <string name="open_rn_activity">Open React Native Activity</string>
 </resources>

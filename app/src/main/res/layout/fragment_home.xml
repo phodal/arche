@@ -6,10 +6,10 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/open_rn_button"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="@string/app_name">
-
+        android:text="@string/open_rn_activity">
     </Button>
 
 </LinearLayout>

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private var homeFragment: HomeFragment? = null
     private var archeReactFragment: ArcheReactFragment? = null
     private var archeWebViewFragment: ArcheWebViewFragment? = null
-    var fragments: Array<Fragment>? = null
+    private var fragments: Array<Fragment>? = null
     private var lastShowFragment = 0
 
     private val OVERLAY_PERMISSION_REQ_CODE = 2018
