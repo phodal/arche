@@ -82,3 +82,22 @@ ionic start archeWebview sidemenu
 
 yarn build
 ```
+
+问题：
+
+```
+java.lang.ClassCastException: android.app.Application cannot be cast to arche.phodal.com.arche.ArcheApplication
+```
+
+
+
+```
+    <application
+        android:name=".ArcheApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+```

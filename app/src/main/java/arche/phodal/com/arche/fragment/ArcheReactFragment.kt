@@ -1,9 +1,9 @@
 import android.os.Bundle
 import android.support.annotation.Nullable
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import arche.phodal.com.arche.base.ReactFragment
 import com.facebook.react.BuildConfig
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
@@ -11,12 +11,15 @@ import com.facebook.react.common.LifecycleState
 import com.facebook.react.shell.MainReactPackage
 
 
-class ArcheReactFragment : Fragment() {
+class ArcheReactFragment : ReactFragment() {
+    override val mainComponentName: String
+        get() = "RNArche"
+
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
 
     @Nullable
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): ReactRootView? {
         mReactRootView = ReactRootView(activity)
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(activity.application)

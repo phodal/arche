@@ -12,8 +12,11 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import com.facebook.react.ReactInstanceManager
+import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
+    private var mReactInstanceManager: ReactInstanceManager? = null
     private var homeFragment: HomeFragment? = null
     private var archeReactFragment: ArcheReactFragment? = null
     private var archeWebViewFragment: ArcheWebViewFragment? = null
@@ -27,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        mReactInstanceManager = (application as ArcheApplication).reactNativeHost.reactInstanceManager
+
         initFragments()
 
         if (BuildConfig.DEBUG && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -101,5 +106,24 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager!!.onHostPause(this)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (mReactInstanceManager != null) {
+            mReactInstanceManager!!.onHostResume(this, this)
+        }
+    }
+
+    override fun invokeDefaultOnBackPressed() {
+        super.onBackPressed()
     }
 }
