@@ -10,7 +10,7 @@ import android.support.design.widget.BottomNavigationView.OnNavigationItemSelect
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import MyReactFragment
+import ArcheReactFragment
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
@@ -40,13 +40,13 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                val reactActivity = Intent(this, MyReactActivity::class.java)
+                val reactActivity = Intent(this, ArcheReactActivity::class.java)
                 this.startActivity(reactActivity)
                 message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                val fragment = MyReactFragment()
+                val fragment = ArcheReactFragment()
                 supportFragmentManager.beginTransaction()
                         .add(R.id.container, fragment)
                         .commit()
@@ -55,11 +55,10 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_webview -> {
-                val webview = WebView(this)
-                setContentView(webview)
-                webview.settings.javaScriptEnabled = true
-                webview.webViewClient = WebViewClient()
-                webview.loadUrl("https://www.baidu.com")
+                val fragment = ArcheWebViewFragment()
+                supportFragmentManager.beginTransaction()
+                        .add(R.id.container, fragment)
+                        .commit()
 
                 message.setText(R.string.title_webview)
                 return@OnNavigationItemSelectedListener true

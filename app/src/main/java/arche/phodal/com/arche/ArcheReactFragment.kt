@@ -11,7 +11,7 @@ import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
 
 
-class MyReactFragment : Fragment() {
+class ArcheReactFragment : Fragment() {
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
 

@@ -12,7 +12,7 @@ import com.facebook.react.shell.MainReactPackage
 
 import java.util.Arrays
 
-class MyReactActivity : Activity(), DefaultHardwareBackBtnHandler {
+class ArcheReactActivity : Activity(), DefaultHardwareBackBtnHandler {
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
 
