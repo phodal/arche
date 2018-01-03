@@ -15,7 +15,6 @@ abstract class ReactFragment : Fragment() {
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
 
-    // This method returns the name of our top-level component to show
     abstract val mainComponentName: String
 
     override fun onAttach(context: Context?) {

@@ -1,7 +1,6 @@
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import arche.phodal.com.arche.base.ReactFragment
 import com.facebook.react.BuildConfig
@@ -19,7 +18,7 @@ class ArcheReactFragment : ReactFragment() {
     private var mReactInstanceManager: ReactInstanceManager? = null
 
     @Nullable
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): ReactRootView? {
+    override fun onCreateView(inflater: LayoutInflater?, group: ViewGroup?, savedInstanceState: Bundle?): ReactRootView? {
         mReactRootView = ReactRootView(activity)
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(activity.application)

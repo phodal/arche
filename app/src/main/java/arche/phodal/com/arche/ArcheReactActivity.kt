@@ -30,7 +30,7 @@ class ArcheReactActivity : Activity(), DefaultHardwareBackBtnHandler {
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackages(packages)
-                //                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build()
         mReactRootView!!.startReactApplication(mReactInstanceManager, "RNArche", null)
