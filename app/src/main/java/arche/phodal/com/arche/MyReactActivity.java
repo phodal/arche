@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.facebook.react.ReactInstanceManager;
-import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
@@ -35,7 +34,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackages(getPackages())
-                .setUseDeveloperSupport(BuildConfig.DEBUG)
+//                .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
         mReactRootView.startReactApplication(mReactInstanceManager, "RNArche", null);
