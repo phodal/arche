@@ -14,7 +14,6 @@ import android.webkit.WebViewClient
 class ArcheWebViewFragment : Fragment() {
     private var mWebView: WebView? = null
 
-
     @SuppressLint("SetJavaScriptEnabled")
     @Nullable
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
