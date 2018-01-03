@@ -1,14 +1,17 @@
+import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import arche.phodal.com.arche.base.ReactFragment
 import com.facebook.react.BuildConfig
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.ReactRootView
 import com.facebook.react.common.LifecycleState
 import com.facebook.react.shell.MainReactPackage
-
 
 class ArcheReactFragment : ReactFragment() {
     override val mainComponentName: String

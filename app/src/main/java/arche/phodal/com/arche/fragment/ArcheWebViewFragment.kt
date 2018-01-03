@@ -1,6 +1,7 @@
 package arche.phodal.com.arche
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
@@ -10,11 +11,29 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.graphics.Bitmap
+import android.support.v7.app.ActionBar
 import com.wang.avi.AVLoadingIndicatorView
 
 class ArcheWebViewFragment : Fragment() {
     private var mWebView: WebView? = null
     private var avi: AVLoadingIndicatorView? = null
+
+    private var actionBar: ActionBar? = null
+
+    @SuppressLint("ObsoleteSdkInt")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        actionBar?.show()
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        actionBar?.show()
+    }
 
     @SuppressLint("SetJavaScriptEnabled")
     @Nullable
@@ -31,6 +50,9 @@ class ArcheWebViewFragment : Fragment() {
         mWebView!!.webViewClient = WebViewClient()
 
         setLoadingProgress()
+
+        actionBar = (this.activity as MainActivity).supportActionBar
+        actionBar?.hide()
 
         return view
     }
