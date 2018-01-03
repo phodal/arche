@@ -1,6 +1,17 @@
 Android 应用开发：Kotlin + React Native + Dore + Ionic 3.x
 ===
 
+为了总结去年的移动开发经验，我使用 Kotlin + React Native + Dore + Ionic 3.x 做了一个简单的模板项目：Arche。
+
+Arche 是一个 Android 移动应用模板——使用原生（Kotlin） Android 集成 React Native，以及 Ionic Web 框架、基于 React Native 的混合应用框架 Dore。
+
+其技术栈是：
+
+ - 原生 Android（Kotlin）
+ - React Native
+ - Ionic + Angular
+ - Dore Framework
+
 创建原生 Android 项目
 ---
 
