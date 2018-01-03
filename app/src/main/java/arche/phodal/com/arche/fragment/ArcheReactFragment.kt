@@ -1,11 +1,9 @@
-import android.annotation.SuppressLint
-import android.os.Build
+package arche.phodal.com.arche.fragment
+
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import arche.phodal.com.arche.base.ReactFragment
 import com.facebook.react.BuildConfig
 import com.facebook.react.ReactInstanceManager

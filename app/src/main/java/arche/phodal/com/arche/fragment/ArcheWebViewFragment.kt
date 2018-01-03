@@ -1,7 +1,7 @@
-package arche.phodal.com.arche
+package arche.phodal.com.arche.fragment
 
 import android.annotation.SuppressLint
-import android.content.Context
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.annotation.Nullable
 import android.support.v4.app.Fragment
@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
-import android.graphics.Bitmap
+import arche.phodal.com.arche.R
 import com.wang.avi.AVLoadingIndicatorView
 
 class ArcheWebViewFragment : Fragment() {

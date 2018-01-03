@@ -1,6 +1,5 @@
 package arche.phodal.com.arche
 
-import ArcheReactFragment
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
@@ -11,6 +10,9 @@ import android.support.design.widget.BottomNavigationView.OnNavigationItemSelect
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import arche.phodal.com.arche.fragment.ArcheReactFragment
+import arche.phodal.com.arche.fragment.ArcheWebViewFragment
+import arche.phodal.com.arche.fragment.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import com.facebook.react.ReactInstanceManager
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
