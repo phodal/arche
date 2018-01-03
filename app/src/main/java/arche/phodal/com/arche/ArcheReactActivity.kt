@@ -16,7 +16,7 @@ class ArcheReactActivity : Activity(), DefaultHardwareBackBtnHandler {
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
 
-    protected val packages: List<ReactPackage>
+    private val packages: List<ReactPackage>
         get() = Arrays.asList<ReactPackage>(
                 MainReactPackage()
         )

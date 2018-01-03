@@ -38,11 +38,6 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_home -> {
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                val reactActivity = Intent(this, ArcheReactActivity::class.java)
-                this.startActivity(reactActivity)
-                return@OnNavigationItemSelectedListener true
-            }
             R.id.navigation_notifications -> {
                 val fragment = ArcheReactFragment()
                 supportFragmentManager.beginTransaction()
@@ -57,6 +52,11 @@ class MainActivity : AppCompatActivity() {
                         .add(R.id.container, fragment)
                         .commit()
 
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_dashboard -> {
+                val reactActivity = Intent(this, ArcheReactActivity::class.java)
+                this.startActivity(reactActivity)
                 return@OnNavigationItemSelectedListener true
             }
         }

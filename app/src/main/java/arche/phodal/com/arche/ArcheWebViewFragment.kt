@@ -24,8 +24,6 @@ class ArcheWebViewFragment : Fragment() {
 
         val webSettings = mWebView!!.settings
         webSettings.javaScriptEnabled = true
-
-        // Force links and redirects to open in the WebView instead of in a browser
         mWebView!!.webViewClient = WebViewClient()
 
         return view
