@@ -8,11 +8,18 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private var homeFragment: HomeFragment? = null
+    private var archeReactFragment: ArcheReactFragment? = null
+    private var archeWebViewFragment: ArcheWebViewFragment? = null
+    var fragments: Array<Fragment>? = null
+    private var lastShowFragment = 0
+
     private val OVERLAY_PERMISSION_REQ_CODE = 2018
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        initFragments()
 
         if (BuildConfig.DEBUG && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
@@ -33,40 +41,54 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                if (lastShowFragment != 0) {
+                    switchFragment(lastShowFragment, 0)
+                    lastShowFragment = 0
+                }
                 message.setText(R.string.title_home)
-                val fragment = HomeFragment()
-                supportFragmentManager.beginTransaction()
-                        .add(R.id.container, fragment)
-                        .commit()
 
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_dashboard -> {
-                val reactActivity = Intent(this, ArcheReactActivity::class.java)
-                this.startActivity(reactActivity)
-                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                val fragment = ArcheReactFragment()
-                supportFragmentManager.beginTransaction()
-                        .add(R.id.container, fragment)
-                        .commit()
-
+                if (lastShowFragment != 1) {
+                    switchFragment(lastShowFragment, 1)
+                    lastShowFragment = 1;
+                }
                 message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_webview -> {
-                val fragment = ArcheWebViewFragment()
-                supportFragmentManager.beginTransaction()
-                        .add(R.id.container, fragment)
-                        .commit()
-
+                if (lastShowFragment != 2) {
+                    switchFragment(lastShowFragment, 2)
+                    lastShowFragment = 2
+                }
                 message.setText(R.string.title_webview)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
+    }
+
+    private fun switchFragment(lastIndex: Int, index: Int) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.hide(fragments!![lastIndex])
+        if (!fragments!![index].isAdded()) {
+            transaction.add(R.id.container, fragments!![index])
+        }
+        transaction.show(fragments!![index]).commitAllowingStateLoss()
+    }
+
+    private fun initFragments() {
+        homeFragment = HomeFragment()
+        archeReactFragment = ArcheReactFragment()
+        archeWebViewFragment = ArcheWebViewFragment()
+        fragments = arrayOf<Fragment>(homeFragment!!, archeReactFragment!!, archeWebViewFragment!!)
+        lastShowFragment = 0
+        supportFragmentManager
+                .beginTransaction()
+                .add(R.id.container, homeFragment)
+                .show(homeFragment)
+                .commit()
     }
 
     @SuppressLint("ShowToast")
