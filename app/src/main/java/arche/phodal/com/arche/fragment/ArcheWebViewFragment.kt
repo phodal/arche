@@ -18,29 +18,9 @@ class ArcheWebViewFragment : Fragment() {
     private var mWebView: WebView? = null
     private var avi: AVLoadingIndicatorView? = null
 
-    private var actionBar: ActionBar? = null
-
     @SuppressLint("ObsoleteSdkInt")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        actionBar?.show()
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        actionBar?.show()
-    }
-
-    override fun onHiddenChanged(hidden: Boolean) {
-        super.onHiddenChanged(hidden)
-        when {
-            hidden -> actionBar?.show()
-            else -> actionBar?.hide()
-        }
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -58,10 +38,6 @@ class ArcheWebViewFragment : Fragment() {
         mWebView!!.webViewClient = WebViewClient()
 
         setLoadingProgress()
-
-        actionBar = (this.activity as MainActivity).supportActionBar
-        actionBar?.hide()
-
         return view
     }
 
