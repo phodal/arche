@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import MyReactFragment
+import android.webkit.WebView
+import android.webkit.WebViewClient
 
 class MainActivity : AppCompatActivity() {
     private val OVERLAY_PERMISSION_REQ_CODE = 2018
@@ -30,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -49,6 +52,16 @@ class MainActivity : AppCompatActivity() {
                         .commit()
 
                 message.setText(R.string.title_dashboard)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_webview -> {
+                val webview = WebView(this)
+                setContentView(webview)
+                webview.settings.javaScriptEnabled = true
+                webview.webViewClient = WebViewClient()
+                webview.loadUrl("https://www.baidu.com")
+
+                message.setText(R.string.title_webview)
                 return@OnNavigationItemSelectedListener true
             }
         }

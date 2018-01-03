@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Activity</string>
     <string name="title_notifications">Fragment</string>
+    <string name="title_webview">Webview</string>
 </resources>
