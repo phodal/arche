@@ -1,0 +1,22 @@
+<ion-view view-title="Dashboard">
+  <ion-content scroll="">
+    <div class="item item-divider">
+      Basic
+    </div>
+    <ion-list>
+      <ion-item class="item item-icon-right" href="#/tab/dash/device">
+        Version {{version}}
+        <i class="icon ion-ios-arrow-right"></i>
+      </ion-item>
+      <ion-item ng-click="showToast()">
+        showToast
+      </ion-item>
+      <ion-item ng-click="showToastCenter()">
+        showToastCenter
+      </ion-item>
+      <ion-item ng-click="showDatePicker()">
+        showDatePicker {{date}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

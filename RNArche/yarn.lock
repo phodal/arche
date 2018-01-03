@@ -1454,6 +1454,14 @@ dom-walk@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
 
+dore-toast@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/dore-toast/-/dore-toast-1.0.8.tgz#25c3a8a7d6ddcbfdb190e82660a4ded55fd72680"
+
+dore@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dore/-/dore-1.0.0.tgz#305d021fec36a1a3636e31385fbd029b88d79fca"
+
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -3461,6 +3469,10 @@ react-devtools-core@^2.5.0:
   dependencies:
     shell-quote "^1.6.1"
     ws "^2.0.3"
+
+react-native-device-info@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-0.13.0.tgz#81051eebd3db6959e4f1d2cb0ae8df74105040cf"
 
 react-native@0.50.3:
   version "0.50.3"

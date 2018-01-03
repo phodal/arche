@@ -17,7 +17,10 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "dore": "^1.0.0",
+    "dore-toast": "^1.0.8",
     "react": "16.0.0",
-    "react-native": "0.50.3"
+    "react-native": "0.50.3",
+    "react-native-device-info": "^0.13.0"
   }
 }
