@@ -20,7 +20,7 @@ class ArcheWebViewFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater?.inflate(R.layout.fragment_webview, container, false)
         mWebView = view?.findViewById(R.id.webview)
-        mWebView!!.loadUrl("https://www.phodal.com")
+        mWebView!!.loadUrl("file:///android_asset/www/index.html")
 
         val webSettings = mWebView!!.settings
         webSettings.javaScriptEnabled = true

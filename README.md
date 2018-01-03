@@ -71,3 +71,14 @@ Bundle files
 ```
 cp ./RNArche/android/app/build/intermediates/assets/release/index.android.bundle ./app/src/main/assets/index.android.bundle
 ```
+
+WebView
+---
+
+```
+npm install -g cordova ionic
+
+ionic start archeWebview sidemenu
+
+yarn build
+```

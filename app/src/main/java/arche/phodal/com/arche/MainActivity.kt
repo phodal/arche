@@ -36,13 +36,11 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
-                message.setText(R.string.title_home)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
                 val reactActivity = Intent(this, ArcheReactActivity::class.java)
                 this.startActivity(reactActivity)
-                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
@@ -51,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                         .add(R.id.container, fragment)
                         .commit()
 
-                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_webview -> {
@@ -60,7 +57,6 @@ class MainActivity : AppCompatActivity() {
                         .add(R.id.container, fragment)
                         .commit()
 
-                message.setText(R.string.title_webview)
                 return@OnNavigationItemSelectedListener true
             }
         }
