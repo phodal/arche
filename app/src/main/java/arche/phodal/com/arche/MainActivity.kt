@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_dashboard -> {
                 val reactActivity = Intent(this, MyReactActivity::class.java)
                 this.startActivity(reactActivity)
-//                message.setText(R.string.title_dashboard)
+                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                         .add(R.id.container, fragment)
                         .commit()
 
-//                message.setText(R.string.title_notifications)
+                message.setText(R.string.title_dashboard)
                 return@OnNavigationItemSelectedListener true
             }
         }
