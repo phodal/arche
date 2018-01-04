@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
 在这里，我使用的是 Fragment 来切换页面，逻辑如下：
 
-```
+```kotlin
 private fun switchFragment(lastIndex: Int, index: Int) {
     val transaction = supportFragmentManager.beginTransaction()
     transaction.hide(fragments!![lastIndex])
@@ -79,7 +79,7 @@ private fun initFragments() {
 
 对应的，``mOnNavigationItemSelectedListener`` 就变成了：
 
-```
+```kotlin
 private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener { item ->
     when (item.itemId) {
         R.id.navigation_home -> {
@@ -110,7 +110,7 @@ private val mOnNavigationItemSelectedListener = OnNavigationItemSelectedListener
 
 其布局是：
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -171,7 +171,7 @@ npm run inject
 
 添加 Overlay 的权限处理：
 
-```
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
@@ -211,7 +211,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 
 我的是 ArcheApplication
 
-```
+```kotlin
 class ArcheApplication : Application(), ReactApplication {
     private val mReactNativeHost = object : ReactNativeHost(this) {
         override fun getUseDeveloperSupport(): Boolean {
@@ -233,7 +233,7 @@ class ArcheApplication : Application(), ReactApplication {
 
 ### 创建基础的 Fragment
 
-```
+```kotlin
 abstract class ReactFragment : Fragment() {
     private var mReactRootView: ReactRootView? = null
     private var mReactInstanceManager: ReactInstanceManager? = null
@@ -270,7 +270,7 @@ abstract class ReactFragment : Fragment() {
 
 然后在我们的 MainActivity 中实现对应的逻辑：
 
-```
+```kotlin
 class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
     ...
     private var mReactInstanceManager: ReactInstanceManager? = null
@@ -316,7 +316,7 @@ class MainActivity : AppCompatActivity(), DefaultHardwareBackBtnHandler {
 
 ### 创建我们的 Fragment
 
-```
+```kotlin
 class ArcheReactFragment : ReactFragment() {
     override val mainComponentName: String
         get() = "RNArche"
@@ -343,13 +343,13 @@ class ArcheReactFragment : ReactFragment() {
 
 这里的 ``"RNArche"`` 需要和 React Native 中注册的 Component 保持一致：
 
-```
+```javascript
 AppRegistry.registerComponent('RNArche', () => App);
 ```
 
 在这里，也可以注册多个 Component
 
-```
+```javascript
 AppRegistry.registerComponent('RNArche', () => App);
 AppRegistry.registerComponent('RNArche2', () => App2);
 ```
@@ -377,7 +377,7 @@ ionic build --prod
 
 对应的 Android 代码如下：
 
-```
+```kotlin
 @SuppressLint("SetJavaScriptEnabled")
 @Nullable
 override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -398,7 +398,7 @@ override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, save
 
 然后，我也顺手添加了一个 Loading 效果：
 
-```
+```kotlin
 private fun setLoadingProgress() {
     mWebView!!.webViewClient = object : WebViewClient() {
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
@@ -416,7 +416,7 @@ private fun setLoadingProgress() {
 
 对应的 XML 如下：
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -459,7 +459,7 @@ Q & A
 
 在 build.gradle 中添加 ndk 配置：
 
-```
+```gradle
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -497,7 +497,7 @@ java.lang.ClassCastException: android.app.Application cannot be cast to arche.ph
 
 在 AndroidManifest.xml 添加对应的 application
 
-```
+```xml
     <application
         android:name=".ArcheApplication"
         android:allowBackup="true"
